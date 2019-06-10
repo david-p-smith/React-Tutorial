@@ -135,9 +135,12 @@ function Square(props){
         const winner = calculateWinner(current.squares);
 
         const moves = history.map((step, move) => {
-            const desc = move ?
+            let desc = move ?
                 'Go to move #' + move + '(square ' + step.lastSquare + ' col ' + this.determineCol(step.lastSquare) + ' row ' + this.determineRow(step.lastSquare) + ')':
                 'Go to game start';
+
+            desc =  this.state.stepNumber === move ?
+              <b>{desc}</b> : desc;
             
             return (
                 <li key={move}>
