@@ -109,6 +109,26 @@ function Square(props){
       return col;
     }
 
+    determineRow(square){
+      //0,1,2 - row 1
+      //3,4,5 - row 2
+      //6,7,8 - row 3
+
+      let row = 1;
+
+      if(square < 3){
+        row = 1;
+      }
+      else if (square < 6){
+        row = 2;
+      }
+      else{
+        row = 3;
+      }
+
+      return row;
+    }
+
     render() {
         const history = this.state.history;
         const current = history[this.state.stepNumber];
