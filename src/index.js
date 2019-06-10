@@ -116,7 +116,7 @@ function Square(props){
 
         const moves = history.map((step, move) => {
             const desc = move ?
-                'Go to move #' + move + '(square ' + step.lastSquare + ')':
+                'Go to move #' + move + '(square ' + step.lastSquare + ' col ' + this.determineCol(step.lastSquare) + ')':
                 'Go to game start';
             
             return (
