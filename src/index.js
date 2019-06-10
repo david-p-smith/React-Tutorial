@@ -87,6 +87,28 @@ function Square(props){
         });
     }
 
+    determineCol(square){
+      //0,3,6 - col 1
+      //1,4,7 - col 2
+      //2,5,8 - col 3
+
+      let col = 0;
+
+      if(square === 0 || square === 3 || square === 6){
+        col = 1;
+      }
+
+      if(square === 1 || square === 4 || square === 7){
+        col = 2;
+      }
+
+      if(square === 2 || square === 5 || square === 8){
+        col = 3;
+      }
+
+      return col;
+    }
+
     render() {
         const history = this.state.history;
         const current = history[this.state.stepNumber];
